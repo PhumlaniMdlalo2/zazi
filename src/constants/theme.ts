@@ -7,24 +7,71 @@ import '@/global.css';
 
 import { Platform } from 'react-native';
 
+// SA-flag-inspired palette (protea green / gold / sky blue / red) tuned for
+// AA contrast in both schemes, plus semantic tokens used across the app.
 export const Colors = {
   light: {
-    text: '#000000',
-    background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
+    text: '#15201A',
+    textSecondary: '#5B685F',
+    background: '#FBFBF7',
+    backgroundElement: '#F0F5EE',
+    backgroundSelected: '#DFF0E3',
+    border: '#E2E7DF',
+    card: '#FFFFFF',
+    overlay: 'rgba(15, 25, 18, 0.55)',
+
+    primary: '#0B8A3D',
+    primaryDark: '#066A2E',
+    onPrimary: '#FFFFFF',
+    secondary: '#F2A900',
+    secondaryDark: '#C98A00',
+    onSecondary: '#211500',
+    accentBlue: '#0F3D91',
+    accentBlueDark: '#0A2C6B',
+    accentRed: '#D5312A',
+    accentRedDark: '#A32620',
+
+    success: '#0B8A3D',
+    danger: '#D5312A',
+    heart: '#EF4444',
+    xp: '#F2A900',
+    streak: '#E8730A',
   },
   dark: {
-    text: '#ffffff',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
-    textSecondary: '#B0B4BA',
+    text: '#EEF3EC',
+    textSecondary: '#A9B6A6',
+    background: '#0E1511',
+    backgroundElement: '#182019',
+    backgroundSelected: '#1E2F22',
+    border: '#26312B',
+    card: '#182019',
+    overlay: 'rgba(0, 0, 0, 0.65)',
+
+    primary: '#3ADC7C',
+    primaryDark: '#1FAE63',
+    onPrimary: '#062511',
+    secondary: '#FFC94D',
+    secondaryDark: '#D9A62E',
+    onSecondary: '#211500',
+    accentBlue: '#5C87E0',
+    accentBlueDark: '#3E63C7',
+    accentRed: '#FF7A72',
+    accentRedDark: '#D4544C',
+
+    success: '#3ADC7C',
+    danger: '#FF7A72',
+    heart: '#FF6B6B',
+    xp: '#FFC94D',
+    streak: '#FFA24D',
   },
 } as const;
 
 export type ThemeColor = keyof typeof Colors.light & keyof typeof Colors.dark;
+
+export const Radius = { sm: 8, md: 12, lg: 16, xl: 24, pill: 999 } as const;
+
+/** Duolingo-style "pressable 3D" bottom border depth. */
+export const PressDepth = 4;
 
 export const Fonts = Platform.select({
   ios: {

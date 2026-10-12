@@ -31,7 +31,11 @@ yarn-error.*
 *.pem
 
 # local env files
+.env
 .env*.local
+
+# Firebase admin credentials (never commit)
+serviceAccountKey.json
 
 # typescript
 *.tsbuildinfo
